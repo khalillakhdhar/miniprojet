@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CategorieService } from './shared/services/categorie.service';
+import { EmployeeService } from './shared/services/employee.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'miniprojet';
+
+  constructor(private categorieapi:CategorieService, private employeeapi:EmployeeService)
+  {
+
+  }
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.categorieapi.getCategories().subscribe(categories=>
+      {
+        console.log("categories",categories);
+      } )
+      this.employeeapi.getEmployees().subscribe(employees=>
+        {
+          console.log("employees",employees);
+        } )
+  }
 }
