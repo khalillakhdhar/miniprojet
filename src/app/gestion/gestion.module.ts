@@ -6,6 +6,7 @@ import { GestionComponent } from './gestion.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,11 +14,13 @@ import { ProfileComponent } from './profile/profile.component';
     GestionComponent,
     EmployeesComponent,
     CategoriesComponent,
-    ProfileComponent
+    ProfileComponent,
+
   ],
   imports: [
-    CommonModule,
-    GestionRoutingModule
+  CommonModule,
+    GestionRoutingModule,
+    FormsModule
   ]
 })
 export class GestionModule { }
