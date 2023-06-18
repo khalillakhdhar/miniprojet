@@ -1,0 +1,18 @@
+<form (submit)="authentifier()">
+  <div class="mb-3 text-center">
+    <h2>Connexion</h2>
+
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Email </label>
+    <input type="email" [(ngModel)]="employee.email" name="mail" class="form-control">
+
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Mot de passe</label>
+    <input type="password" name="pass" [(ngModel)]="employee.password" class="form-control" >
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <br><a routerLink="register">s'inscrire</a>
+</form>

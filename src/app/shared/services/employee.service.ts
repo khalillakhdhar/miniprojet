@@ -20,4 +20,8 @@ deleteEmployee(id:number)
 {
   return this.http.delete<Employee>(`${this.url}/${id}`)
 }
+authentifier(employee:Employee )
+{
+return this.http.post<Employee[]>(this.url+"/auth", employee);
+}
 }

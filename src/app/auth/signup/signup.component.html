@@ -1,0 +1,33 @@
+<form #subscribe="ngForm" (submit)="signup()">
+  <div class="mb-3 text-center">
+    <h2>Inscription</h2>
+
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Nom </label>
+    <input type="text" required [(ngModel)]="employee.nom" name="nom" class="form-control">
+
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">prénom </label>
+    <input type="text" required [(ngModel)]="employee.prenom" name="pr" class="form-control">
+
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">téléphone </label>
+    <input type="text" required [(ngModel)]="employee.tel" name="tel" class="form-control">
+
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Email </label>
+    <input type="email" required [(ngModel)]="employee.email" name="mail" class="form-control">
+
+  </div>
+  <div class="mb-3">
+    <label class="form-label">mot de passe</label>
+    <input type="password" name="pass" required [(ngModel)]="employee.password" class="form-control" >
+  </div>
+
+  <button [disabled]="subscribe.invalid" type="submit" class="btn btn-primary">S'inscrire</button>
+  <br><a routerLink="../">se connecter</a>
+</form>
