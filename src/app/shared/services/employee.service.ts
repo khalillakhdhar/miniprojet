@@ -14,7 +14,7 @@ getEmployees()
 }
 addEmployee(employee:Employee )
 {
-return this.http.post<Employee[]>(this.url, employee);
+return this.http.post<Employee>(this.url, employee);
 }
 deleteEmployee(id:number)
 {
