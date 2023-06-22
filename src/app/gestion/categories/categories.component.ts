@@ -11,6 +11,7 @@ import { Categorie } from '../../shared/classes/categorie';
 export class CategoriesComponent {
 categories:Categorie[] = [];
 categorie=new Categorie();
+grade=""
   constructor(private categorieapi:CategorieService)
   {
 
@@ -19,6 +20,9 @@ categorie=new Categorie();
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
 this.readCategories();
+let us=JSON.parse(localStorage.getItem("current")||'')||"";
+   this.grade=us.grade
+console.log("grade",this.grade)
     }
     addCategorie()
     {

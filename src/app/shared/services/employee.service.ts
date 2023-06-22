@@ -5,7 +5,7 @@ import { Employee } from '../classes/employee';
   providedIn: 'root'
 })
 export class EmployeeService {
-
+public loggedInStatus: boolean = false;
   url: string="http://localhost:8080/employee"
   constructor(private http:HttpClient) { }
 getEmployees()
@@ -23,5 +23,9 @@ deleteEmployee(id:number)
 authentifier(employee:Employee )
 {
 return this.http.post<Employee[]>(this.url+"/auth", employee);
+}
+login()
+{
+  this.loggedInStatus=true;
 }
 }

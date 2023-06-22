@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="grade==='admin'">
   <form (submit)="addCategorie()">
   catégorie: <input type="text" placeholder="catégorie" name="catégorie" id="catégorie"  [(ngModel)]="categorie.category" class="form-control">
   <button type="submit" class="btn btn-success">ajouter</button>
@@ -10,14 +10,14 @@
   <tr>
 <th>Id</th>
 <th>catégorie</th>
-<th>Action</th>
+<th *ngIf="grade==='admin'">Action</th>
 </tr>
 </thead>
 <tbody>
 <tr *ngFor="let cat of categories">
   <td>{{cat.id}}</td>
   <td>{{cat.category}}</td>
-  <td><button (click)="deleteCategorie(cat)" class="btn btn-danger">supprimer</button></td>
+  <td *ngIf="grade==='admin'"><button (click)="deleteCategorie(cat)" class="btn btn-danger">supprimer</button></td>
 </tr>
 
 </tbody>

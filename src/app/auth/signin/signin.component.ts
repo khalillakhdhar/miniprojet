@@ -13,6 +13,7 @@ employee=new Employee();
 currentEmployee:any;
 constructor(private router: Router, private employeeService: EmployeeService)
 {
+  console.log('auth',employeeService.loggedInStatus);
 
 }
 authentifier()
@@ -26,6 +27,7 @@ this.employeeService.authentifier(this.employee).subscribe(emp =>
     else
     {
       localStorage.setItem("current",JSON.stringify(this.currentEmployee));
+      this.employeeService.login();
       window.location.replace("../gestion")
     }
 
