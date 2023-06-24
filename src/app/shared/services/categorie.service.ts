@@ -10,7 +10,7 @@ export class CategorieService {
   constructor(private http:HttpClient) { }
 getCategories()
 {
-  return this.http.get<Categorie[]>(this.url);
+  return this.http.get<Categorie[]>(this.url); // return categories from http request backend
 }
 addCategorie(category:Categorie )
 {

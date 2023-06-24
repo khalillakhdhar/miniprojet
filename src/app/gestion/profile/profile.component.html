@@ -1,1 +1,46 @@
-<p>profile works!</p>
+
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+
+    </div>
+    <div class="col-6">
+      <form #subscribe="ngForm" (submit)="updateUser()">
+        <div class="mb-3 text-center">
+          <h2>Modifier profile</h2>
+
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Nom </label>
+          <input type="text" required [(ngModel)]="currentUser.nom" name="nom" class="form-control">
+
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">prénom </label>
+          <input type="text" required [(ngModel)]="currentUser.prenom" name="pr" class="form-control">
+
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">téléphone </label>
+          <input type="text" required [(ngModel)]="currentUser.tel" name="tel" class="form-control">
+
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Email </label>
+          <input type="email" required [(ngModel)]="currentUser.email" name="mail" class="form-control">
+
+        </div>
+        <div class="mb-3">
+          <label class="form-label">mot de passe</label>
+          <input type="password" name="pass" required [(ngModel)]="currentUser.password" class="form-control" >
+        </div>
+
+        <button [disabled]="subscribe.invalid" type="submit" class="btn btn-primary">modifier</button>
+      </form>
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+</div>

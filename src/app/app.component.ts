@@ -17,13 +17,6 @@ export class AppComponent {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.categorieapi.getCategories().subscribe(categories=>
-      {
-        console.log("categories",categories);
-      } )
-      this.employeeapi.getEmployees().subscribe(employees=>
-        {
-          console.log("employees",employees);
-        } )
+
   }
 }

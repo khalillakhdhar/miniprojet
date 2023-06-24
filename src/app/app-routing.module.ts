@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import { AuthGuardService } from './shared/services/auth-guard.service';
+//import { AuthGuardService } from './shared/services/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -12,10 +13,12 @@ const routes: Routes = [
     }, {
         path: 'gestion',
         loadChildren: () => import ('./gestion/gestion.module').then(m => m.GestionModule),
-        canActivate:[AuthGuardService]
+        canActivate: [AuthGuardService]
+
     }, {
         path: 'chat',
-        loadChildren: () => import ('./chat/chat.module').then(m => m.ChatModule)
+        loadChildren: () => import ('./chat/chat.module').then(m => m.ChatModule),
+        canActivate: [AuthGuardService]
     }
 
 ];
