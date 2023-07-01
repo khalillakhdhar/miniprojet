@@ -27,6 +27,21 @@
     <label class="form-label">mot de passe</label>
     <input type="password" name="pass" required [(ngModel)]="employee.password" class="form-control" >
   </div>
+  <div class="mb-3">
+    <label class="form-label">photo</label>
+    <input type="file"  (change)="onFileSelected($event)" name="photo"   class="form-control" >
+    <div  *ngIf="percentage"  >
+      <div
+      class="progress-bar progress-bar-info"
+      role="progressbar"
+      attr.aria-valuenow="{{ percentage }}"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      [ngStyle]="{ width: percentage + '%' }"
+     >
+      {{ prcentage }}%
+     </div>  </div>
+  </div>
 
   <button [disabled]="subscribe.invalid" type="submit" class="btn btn-primary">S'inscrire</button>
   <br><a routerLink="../">se connecter</a>
