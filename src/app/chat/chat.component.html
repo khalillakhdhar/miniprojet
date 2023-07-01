@@ -25,13 +25,13 @@
 
     </div>
     <div class="col">
-      <div class="card" *ngFor="let ms of messages" style="width: 18rem;">
+      <div class="card" *ngFor="let ms of messages" style="inline-size: 18rem;">
         <!--img src="..." class="card-img-top" alt="..."-->
         <div class="card-body">
-          <h5 *ngIf="username===ms.sender" class="card-title ">moi:</h5>
-          <h5 *ngIf="username!==ms.sender" class="card-title">{{ms.sender}}</h5>
+          <h5 *ngIf="username===ms.sender" class="card-title badge text-bg-success">moi:</h5>
+          <h5 *ngIf="username!==ms.sender" class="card-title badge text-bg-info">{{ms.sender}}</h5>
           <p class="card-text">{{ms.text}}</p>
-          <a  class="btn btn-primary">{{ms.date | date:'short'}}</a>
+          <a  class="btn btn-primary">{{ms.date | date:'short'}}</a> <!-- pipe de date -->
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@
   </div>
 </div>
 
-<br><br><br><br>
+<br><br><br>
 
 <form  (submit)="send()" >
 
@@ -57,3 +57,4 @@
 
   </div>
 </div></form>
+<br><br>

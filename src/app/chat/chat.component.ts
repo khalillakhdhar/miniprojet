@@ -39,7 +39,7 @@ this.getMessages();
   {
     this.message.date=Date.now();
     this.message.sender=this.username;
-    let msg=Object.assign({},this.message);
+    let msg=Object.assign({},this.message); // convert to JSON object from class message object
     this.messageService.createMessage(msg);
     this.message=new Message();
   }
